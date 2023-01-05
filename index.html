@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Personal Portfolio - Alex LaPointe</title>
+    <script src="https://kit.fontawesome.com/b032fa1062.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul> 
+                <i class="fa-solid fa-bars" onclick = "openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>CS Student @ Indiana University</p>
+                <h1>Hi, I'm <span>Alex LaPointe.</span></h1>
+            </div>
+
+        </div>
+
+    </div>
+    <!--------start of about----- -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/alexpicture.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a current sophomore at Indiana University 
+                        majoring in Computer Science and minoring in Business. In my free time, I enjoy working out, hanging
+                        with friends, and watching sports. As an executive member of Sigma Alpha Epsilon, 
+                        I am responsible for the wellbeing
+                        of the organization and its members. 
+                        I created this website to showcase my development skills using HTML, CSS, and JavaScript.
+                        I enjoy working on various projects in Python and Java- a few of which are included on this site.
+
+
+                     </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links"onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id ="skills">
+                        <ul>
+                            <li><span>HTML/CSS/JavaScript Development</span><br>Creating Web interfaces.</li>
+                            <li><span>Python Development</span><br>Python app development.</li>
+                            <li><span>Java Development</span><br>Java app development.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id = "experience">
+                        <ul>
+                            <li><span>Sept. 2022 - Present</span><br>Risk Manager at Sigma Alpha Epslion</li>
+                            <li><span>Jun. 2022 - July 2022 </span><br>Web Developer at Island Time Cart Rentals</li>
+                            <li><span>May 2022 - Aug. 2022</span><br>Host at Main St. Grille</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id = "education">
+                        <ul>
+                            <li><span>2021 - Present</span><br>Current Sophomore pursuing a B.S in Computer Science</li>
+                            <li><span>2017 - 2021</span><br>Graduated from Mt. Vernon High School with Academic Honors</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------start of portfolio----- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work1.png">
+                    <div class="layer">
+                        <h3>Final Grade Calculator</h3>
+                        <p>Using Python and Tkinter, this application allows the user to find the minimum 
+                            score on a final exam to achieve their desired overall grade.
+                        </p>
+                             
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work2.jpg">
+                    <div class="layer">
+                        <h3>Resturant GUI App</h3>
+                        <p>Using Java and the Swing framework,
+                            the user is able to order items via a text based gui.
+                        </p>       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!----------contact------- -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>allapoin@iu.edu</p>
+                    <p>317-518-9749</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/alexander-lapointe/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a href="Images/alexanderlapointe.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet" >
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Made by Alex LaPointe </p>
+        </div>
+    </div>
+
+    
+
+
+
+
+	<script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+
+
+
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu")
+        
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyVmezM-RKQQZWeq5XzDEw_oCRV7mxomemqS18F9urAG7MYTYULakMDJLU9Ja9uBOZv/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully, Thank you!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+  
+  
+
+
+
+  </body>
+</html>
